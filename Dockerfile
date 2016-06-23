@@ -14,7 +14,9 @@ RUN apt-get update && \
     apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/*
 
-
+RUN mkdir /sparklogs && \
+	chmod 777 /sparklogs
+	
 #        master    worker
 #     +---------+---------+
 EXPOSE 7077 8080 7078 8081
